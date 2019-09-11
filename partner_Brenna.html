@@ -376,10 +376,68 @@ summary {
 </p>
 <p><strong>Most recent commit:</strong> committed new Rmd file ~ “new file update”<br />
 </p>
-<p><strong>Able to knit owner_LupingWang?</strong> Yes<br />
+<p><strong>Able to knit owner_LupingWang?</strong> Yes, no problems.<br />
 </p>
 <p><strong>Git/GitHub Tip</strong>: When I first tried to clone the repo, I accidentaly used the url for the owner_LupingWang file instead of the actual repository url. I was confused at first but I get it now.<br />
 </p>
+</div>
+<div id="understanding-concepts" class="section level1">
+<h1>Understanding Concepts</h1>
+<p><strong>1. Explain the difference between Git and Github.</strong><br />
+Git is a control system and Github allows you to access what you’ve done with Git.<br />
+<strong>2. Can Git and Github be used independently? Why don’t we do so? Describe the advantages and disadvantages.</strong><br />
+They can be used separately, but they are made to work together. Using GitHub with Git lets you collaborate easily and keep track of your work. The only disadvatge I can think of is that it isn’t totally straightforward to learn. Figuring out how to push and pull files is a little confusing at first.<br />
+<strong>3. What is a repository in Git and how can you create a repository in Git (write out the command(s))?</strong><br />
+A repository is like a directory where you can keep your files.<br />
+Use <strong><em>git init</em></strong> to initialize a repository in the working directory. Then files can be added using <strong><em>git add [file]</em></strong> and record file changes using <strong><em>git commit -m ‘commit caption’</em></strong>.<br />
+</p>
+</div>
+<div id="coding-exercises" class="section level1">
+<h1>Coding Exercises</h1>
+<p>1.Find NAs</p>
+<pre class="r"><code>X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)
+sum(is.na(X)) #Add up all the NAs</code></pre>
+<pre><code>## [1] 4</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Modify data</li>
+</ol>
+<pre class="r"><code>age = c(25,30,45,60,12,41)
+smoker = c('T','F','T','F','F','F')
+weight = c(120,137,0,168,91,142)
+example_data = data.frame(age,smoker,weight)
+#Replace the third element with 150
+weight[3] = 150
+print(weight[3])</code></pre>
+<pre><code>## [1] 150</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Functions</li>
+</ol>
+<pre class="r"><code>#Finds the proportion of NAs in a vector
+proportionNAs = function(x) {
+  mean(is.na(x)) #Calculates (# NAs / # elements)
+}
+
+idk = function(x) {
+   x / sum(x, na.rm = TRUE) #Devide x by the sum of its elements, not including NAs
+}</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>NAs in two different vectors</li>
+</ol>
+<pre class="r"><code>both_na = function(x,y) {
+  n = length(x)
+  m = length(y)
+  counter = 0
+  if(n==m) {
+    for(i in 1:n) {
+      if(x[i]==y[i]) {
+        counter = counter + 1
+      }
+    }
+  }
+  else {
+    print(&quot;Error: vectors must be the same length.&quot;)
+  }
+}</code></pre>
 </div>
 
 
