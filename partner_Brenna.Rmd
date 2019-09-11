@@ -1,0 +1,19 @@
+---
+title: "Partner - Brenna"
+author: "Brenna"
+date: "9/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1.\
+**Partner's name and username:** Luping Wang ~ lupingw97\
+
+**Most recent commit:** committed new Rmd file ~ "new file update"\
+
+**Able to knit owner_LupingWang?** Yes, no problems.\
+
+**Git/GitHub Tip**: When I first tried to clone the repo, I accidentaly used the url for the owner_LupingWang file instead of the actual repository url. I was confused at first but I get it now.\
