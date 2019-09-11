@@ -63,10 +63,12 @@ both_na = function(x,y) {
   n = length(x)
   m = length(y)
   counter = 0
+  #Check if lengths are the same
   if(n==m) {
+    #If they are, loop through indexes and compare elements
     for(i in 1:n) {
-      if(x[i]==y[i]) {
-        counter = counter + 1
+      if(is.na(x[i])==TRUE && is.na(y[i])==TRUE) { #Check if ith elements are NA
+        counter = counter + 1 #Add one to the count of mutual NAs
       }
     }
   }
