@@ -71,6 +71,7 @@ both_na = function(x,y) {
         counter = counter + 1 #Add one to the count of mutual NAs
       }
     }
+    return(counter)
   }
   else {
     print("Error: vectors must be the same length.")
