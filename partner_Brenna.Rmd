@@ -52,7 +52,7 @@ proportionNAs = function(x) {
   mean(is.na(x)) #Calculates (# NAs / # elements)
 }
 
-idk = function(x) {
+DevideBySum = function(x) {
    x / sum(x, na.rm = TRUE) #Devide x by the sum of its elements, not including NAs
 }
 ```
