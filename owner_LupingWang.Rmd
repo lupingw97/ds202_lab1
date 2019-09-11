@@ -1,0 +1,25 @@
+---
+title: "owner_LupingWang"
+author: "Luping"
+date: "9/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Step1
+**1.Name:**
+Luping Wang
+
+**2.What do you tell people about your field of study at a party:**
+My major is Management of Information Sytem
+
+**3.What are the three most important tools/strategies you use for organizing your work:**
+Ms SQL server, Eclipse, R studio
+
+**4.Interesting fact about yourself:**
+I have a sister who is 12 years younger than me
+
+
+
