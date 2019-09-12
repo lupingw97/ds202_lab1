@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Step1
+# Collaborating on a Repository
 **1.Name:**
 Luping Wang
 
@@ -21,5 +21,81 @@ Ms SQL server, Eclipse, R studio
 **4.Interesting fact about yourself:**
 I have a sister who is 12 years younger than me
 
+# Understanding Concepts 
 
+  1. Explain the difference between Git and Github.
+  
+  **Git** is a version control System.
+  **Github** provides hosting for software development version control using Git. Github is the cloud based tool
+  
+  2. Can Git and Github be used independently? Why don't we do so? Describe the advantages and disadvantages. 
+  
+Yes, they can work independently. Git provides some functions, like revert, merge the branches and git log, etc. Github is the added layer of Git. It can provides another funtions, like code reviews, tracking and peer collaboration, etc. The advantages of why we use them together can be lightweight task/code tracking, online file editing and great interaction between peers/collaboration. The disadvantage can be information leak.  
+
+  3. What is a repository in Git and how can you create a repository in Git (write out the command(s))? 
+  
+  Git repository is a folder(.git) inside a project.This repository tracks all changes made to files in your project, building a history over time. 
+  
+  **How to create a repository:**
+  
+  First, we need to initialize by using "git init", then use "git add "(Tell Git which files to include in the commit, with git add), and then use "git commit"
+  
+
+# Coding Exercises 
+ 1. Write code to count the total number of `NA` occurrences in the vector `X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)`.
+
+```{r}
+X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)
+CntNA =sum(is.na(X)==TRUE)
+print(CntNA)
+```
+
+  2. Run the following code: 
+
+   ```{r}
+   age = c(25,30,45,60,12,41)
+   smoker = c('T','F','T','F','F','F')
+   weight = c(120,137,0,168,91,142)
+   example_data = data.frame(age,smoker,weight)
+   ```
+   This code took three vectors (age, smoker, and weight) and binded them together into an R object known as a data.frame. The advantage of data.frame is that it can handle vectors of different types. For example, age is a numeric vector but smoker status is a character vector (T or F). We named this data.frame as example_data. I obviously made a data entry error: someone cannot have 0 weight. The correct weight should be 150 pounds. Write one line of code that can easily correct this using the [] syntax.
+```{r}
+   age = c(25,30,45,60,12,41)
+   smoker = c('T','F','T','F','F','F')
+   weight = c(120,137,0,168,91,142)
+   example_data = data.frame(age,smoker,weight)
+   example_data[3,3]=150
+   example_data
+```
+   
+   
+   3. In the following I have two code snippets. Turn these code snippets into functions. Think about what each function does
+  and what you would name it. How many arguments does it need? 
+  ```{r, eval=FALSE}
+  mean(is.na(x))
+
+  x / sum(x, na.rm = TRUE)
+  ```
+```{r}
+x <- c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)
+Function_mean_RM_NA=function(x){
+  y=x/sum(x,na.rm=TRUE)
+  
+}
+
+```
+  
+4. Write a function named `both_na()`. This function take two vectors of the same length and returns the number of positions that have an `NA` value in both vectors.
+```{r}
+A<-c(1,2,3,NA,4)
+B<-c(5,NA,7,NA,8)
+both_na<-function(A,B){
+  stopifnot(length(A)==length(B))
+  position=intersect(which(is.na(B),which(is.na(A))))
+  return(position)
+}
+
+
+
+```
 
