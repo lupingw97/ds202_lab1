@@ -1,0 +1,84 @@
+---
+title: "Partner - Brenna"
+author: "Brenna"
+date: "9/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1.\
+**Partner's name and username:** Luping Wang ~ lupingw97\
+
+**Most recent commit:** committed new Rmd file ~ "new file update"\
+
+**Able to knit owner_LupingWang?** Yes, no problems.\
+
+**Git/GitHub Tip**: When I first tried to clone the repo, I accidentaly used the url for the owner_LupingWang file instead of the actual repository url. I was confused at first but I get it now.\
+
+# Understanding Concepts
+**1. Explain the difference between Git and Github.**\
+Git is a control system and Github allows you to access what you've done with Git.\
+**2. Can Git and Github be used independently? Why don't we do so? Describe the advantages and disadvantages.**\
+They can be used separately, but they are made to work together. Using GitHub with Git lets you collaborate easily and keep track of your work. The only disadvatge I can think of is that it isn't totally straightforward to learn. Figuring out how to push and pull files is a little confusing at first.\
+**3. What is a repository in Git and how can you create a repository in Git (write out the command(s))?**\
+A repository is like a directory where you can keep your files.\
+Use ***git init*** to initialize a repository in the working directory. Then files can be added using ***git add [file]*** and record file changes using ***git commit -m 'commit caption'***.\
+
+# Coding Exercises
+1.Find NAs
+```{r}
+X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)
+sum(is.na(X)) #Add up all the NAs
+```
+
+2. Modify data
+```{r}
+age = c(25,30,45,60,12,41)
+smoker = c('T','F','T','F','F','F')
+weight = c(120,137,0,168,91,142)
+example_data = data.frame(age,smoker,weight)
+#Replace the third element with 150
+weight[3] = 150
+print(weight[3])
+```
+
+3. Functions
+```{r}
+#Finds the proportion of NAs in a vector
+proportionNAs = function(x) {
+  mean(is.na(x)) #Calculates (# NAs / # elements)
+}
+
+DevideBySum = function(x) {
+   x / sum(x, na.rm = TRUE) #Devide x by the sum of its elements, not including NAs
+}
+```
+
+4. NAs in two different vectors
+```{r}
+both_na = function(x,y) {
+  n = length(x)
+  m = length(y)
+  counter = 0
+  #Check if lengths are the same
+  if(n==m) {
+    #If they are, loop through indexes and compare elements
+    for(i in 1:n) {
+      if(is.na(x[i])==TRUE && is.na(y[i])==TRUE) { #Check if ith elements are NA
+        counter = counter + 1 #Add one to the count of mutual NAs
+      }
+    }
+    return(counter)
+  }
+  else {
+    print("Error: vectors must be the same length.")
+  }
+}
+```
+
+
+
+
