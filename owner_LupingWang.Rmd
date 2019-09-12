@@ -77,10 +77,16 @@ print(CntNA)
   x / sum(x, na.rm = TRUE)
   ```
 ```{r}
-x <- c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)
-Function_mean_RM_NA=function(x){
+# function for mean(is.na(x))
+Function_NA=function(x){
+  y=mean(is.na(x))
+  return(y)
+}
+
+# function for x / sum(x, na.rm = TRUE)
+Function_mean_Remove_NA=function(x){
   y=x/sum(x,na.rm=TRUE)
-  
+  return(y)
 }
 
 ```

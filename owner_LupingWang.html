@@ -429,10 +429,16 @@ example_data = data.frame(age,smoker,weight)</code></pre>
 <pre class="r"><code>mean(is.na(x))
 
 x / sum(x, na.rm = TRUE)</code></pre>
-<pre class="r"><code>x &lt;- c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)
-Function_mean_RM_NA=function(x){
+<pre class="r"><code># function for mean(is.na(x))
+Function_NA=function(x){
+  y=mean(is.na(x))
+  return(y)
+}
+
+# function for x / sum(x, na.rm = TRUE)
+Function_mean_Remove_NA=function(x){
   y=x/sum(x,na.rm=TRUE)
-  
+  return(y)
 }</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Write a function named <code>both_na()</code>. This function take two vectors of the same length and returns the number of positions that have an <code>NA</code> value in both vectors.</li>
